@@ -1,0 +1,46 @@
+
+
+.app-content {
+  height: calc(100vh - 65px); width: 100vw;
+  overflow: hidden;
+}
+
+.app-toolbar {
+  box-shadow: 0px -3px 12px -1px #00e676;
+  background: #212121;
+}
+
+#app-progress-bar {
+  position: fixed;
+  bottom: 0;
+  background-color: #00e676!important;
+  background: #00e676!important;
+}
+
+.app-sidenav {
+  background: #212121;
+}
+
+.mat-drawer {
+  background-color: #212121;
+  box-shadow: 0px 0 6px #00e676;
+}
+.mat-drawer-slide {
+  border-right: none;
+}
+// scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #00e676;
+}
+
+
+

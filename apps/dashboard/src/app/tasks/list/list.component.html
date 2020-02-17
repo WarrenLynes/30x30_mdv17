@@ -1,0 +1,22 @@
+
+
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+
+      <mat-list-item *ngFor="let dati of data">
+
+        <h2>{{dati.name}}</h2>
+        <p>{{dati.description}}</p>
+
+        <span class="spacer"></span>
+
+        <button mat-icon-button (click)="selectTask.emit(dati.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+      </mat-list-item>
+
+    </mat-list>
+  </mat-card-content>
+</mat-card>

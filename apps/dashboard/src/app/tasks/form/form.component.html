@@ -1,0 +1,19 @@
+
+
+<div class="form-container container">
+  <form (ngSubmit)="onSubmit()" class="col" [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="name" formControlName="name" type="name" name="name">
+      <mat-error *ngIf="form.controls['name'].hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="description" formControlName="description" type="description" name="description">
+      <mat-error *ngIf="form.controls['description'].hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+
+    <button mat-button type="submit">{{selected && selected.id ? 'update' : 'create'}}</button>
+    <button mat-button type="button" *ngIf="selected && selected.id" (click)="deleteTask.emit(selected.id)">delete</button>
+    <button mat-button type="button" *ngIf="form.dirty" (click)="cancel.emit();resetForm()">cancel</button>
+  </form>
+</div>

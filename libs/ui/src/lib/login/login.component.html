@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="col-">
+    <form  class="form-container" (submit)="submit()" [formGroup]="loginForm">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="email" type="email" name="email">
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">Email must be valid</mat-error>
+      </mat-form-field>
+
+      <div class="full-width">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Password" formControlName="password" type="text" phone="password">
+          <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('minLength')">Password must be 8 chars long</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')">Password must be 10 chars or less</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasNumber')">Password must contain a number</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasCapitalCase')">Password must contain a capital letter</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasSmallCase')">Password must contain a lower case letter</mat-error>
+        </mat-form-field>
+        <div class="form-actions">
+          <button type="submit" mat-button color="primary" [disabled]="loginForm.invalid">authenticate</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

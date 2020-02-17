@@ -1,0 +1,20 @@
+
+
+<div class="container d-flex">
+  <div class="col-6">
+    <mdv17-list
+      [data]="tasks$ | async"
+      [selected]="task$ | async"
+      (selectTask)="onSelectTask($event)"
+    ></mdv17-list>
+  </div>
+
+  <div class="col-6">
+    <mdv17-form
+      [selected]="task$ | async"
+      (saveTask)="saveTask($event)"
+      (deleteTask)="onDeleteTask($event)"
+      (cancel)="reset()"
+    ></mdv17-form>
+  </div>
+</div>
